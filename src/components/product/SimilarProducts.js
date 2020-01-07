@@ -9,43 +9,26 @@ import Honor7x from './images/honor-7x.jpg'
 
 const SimilarProducts = () => {
 
-	const note7Pro = {
-		name : "Note 7 Pro",
-		image : Note7Pro
-	}
-
-	const k20Pro = {
-		name : "K20 Pro",
-		image : K20Pro	
-	}
-
-	const pocophoneF1 = {
-		name : "Pocophone F1",
-		image : PocophoneF1	
-	}
-
-	const honor7x = {
-		name : "Honor 7x",
-		image : Honor7x
+	const items = [
+		{ name : "Note 7 Pro", image : Note7Pro }, 
+		{ name : "K20 Pro", image : K20Pro },
+		{ name : "Pocophone F1", image : PocophoneF1 }, 
+		{ name : "Honor 7x", image : Honor7x }
+	];
+	
+	const cards = [];
+	for (const [index, value] of items.entries()) {
+		cards.push(
+			<Col sm={3}>
+				<ProductCard item={value} />
+			</Col>
+		);
 	}
 
 	return (
 		<div id="similar-products" className="pd-20">
 			<h4 className="text-center">Similar Items</h4>
-			<Row>
-				<Col sm={3}>
-					<ProductCard item={note7Pro} />
-				</Col>
-				<Col sm={3}>
-					<ProductCard item={k20Pro} />
-				</Col>
-				<Col sm={3}>
-					<ProductCard item={pocophoneF1}/>
-				</Col>
-				<Col sm={3}>
-					<ProductCard item={honor7x}/>
-				</Col>
-			</Row>
+			<Row>{cards}</Row>
 		</div>
 	);
 };
