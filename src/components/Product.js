@@ -1,9 +1,13 @@
 import React from 'react';
+import ProductImage from './ProductImage';
+import ProductDescription from './ProductDescription';
 
 const Product = () => {
 	return (
-		<div>Product Component</div>
-	)
+		<div>
+			<ProductImage />
+			<ProductDescription />
+		</div>
+	);
 };
-
 export default Product;
