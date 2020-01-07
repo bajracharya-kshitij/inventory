@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Product from './components/Product';
-import SimilarProducts from './components/SimilarProducts';
+import Product from './components/product/Product';
+import SimilarProducts from './components/product/SimilarProducts';
 
 function App() {
   return (
