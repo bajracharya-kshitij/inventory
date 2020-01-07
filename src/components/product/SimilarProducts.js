@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 import ProductCard from './ProductCard';
 
 import Note7Pro from './images/redmi-note-7-pro.jpg';
@@ -29,12 +30,22 @@ const SimilarProducts = () => {
 	}
 
 	return (
-		<div id="similar-products">
-			<h4>Similar Items</h4>
-			<ProductCard item={note7Pro} />
-			<ProductCard item={k20Pro} />
-			<ProductCard item={pocophoneF1}/>
-			<ProductCard item={honor7x}/>
+		<div id="similar-products" className="pd-20">
+			<h4 className="text-center">Similar Items</h4>
+			<Row>
+				<Col sm={3}>
+					<ProductCard item={note7Pro} />
+				</Col>
+				<Col sm={3}>
+					<ProductCard item={k20Pro} />
+				</Col>
+				<Col sm={3}>
+					<ProductCard item={pocophoneF1}/>
+				</Col>
+				<Col sm={3}>
+					<ProductCard item={honor7x}/>
+				</Col>
+			</Row>
 		</div>
 	);
 };

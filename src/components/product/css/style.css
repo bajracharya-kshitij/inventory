@@ -1,6 +1,11 @@
 #product-detail img {
 	width: 400px;
 	height: 400px;
+}
+
+#product-detail .description {
+	padding-top: 25%;
+	font-size: 20px;
 } 
 
 #similar-products img {

@@ -1,14 +1,15 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import './App.css';
 import Product from './components/product/Product';
 import SimilarProducts from './components/product/SimilarProducts';
 
 function App() {
   return (
-    <div className="App">
-      <Product />
-      <SimilarProducts />
-    </div>
+      <Container className="pd-t-50">
+        <Product />
+        <SimilarProducts />
+      </Container>
   );
 }
 
