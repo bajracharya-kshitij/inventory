@@ -16,7 +16,7 @@ const SimilarProducts = (props) => {
 	}
 
 	return (
-		<div id="similar-products" className="pd-20 clickable">
+		<div id="similar-products" className="pd-20">
 			<h4 className="text-center">Similar Items</h4>
 			<Row>{cards}</Row>
 		</div>
