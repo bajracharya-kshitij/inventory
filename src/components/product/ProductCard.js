@@ -5,7 +5,7 @@ const ProductCard = (props) => {
 
 	return (
 		<div className="text-center pd-t-20" onClick={() => props.updateSelectedItem(props.item)}>
-			<ProductImage image={props.item.image}/>
+			<ProductImage image={props.item.image} name={props.item.name} />
 			<h6>{props.item.name}</h6>
 		</div>
 	);

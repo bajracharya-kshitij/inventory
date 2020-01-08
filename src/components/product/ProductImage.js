@@ -4,7 +4,7 @@ import './css/style.css';
 const ProductImage = (props) => {
 	return (
 		<div>
-			<img src={props.image} alt="Redmi Note 8 Pro" />
+			<img src={props.image} alt={props.name} />
 		</div>
 	);
 };
