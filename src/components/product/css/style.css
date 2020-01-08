@@ -12,3 +12,12 @@
 	width: 200px;
 	height: 200px;
 }
+
+.product-card {
+	text-align: center;
+	padding-top: 20px;
+	cursor: pointer;
+}
+.product-card:hover {
+	background-color: #d3d3d3;
+}
