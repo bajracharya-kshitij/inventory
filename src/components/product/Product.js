@@ -4,17 +4,15 @@ import { Row, Col } from 'react-bootstrap';
 import ProductImage from './ProductImage';
 import ProductDescription from './ProductDescription';
 
-import RedmiNote8Pro from './images/redmi-note-8-pro.jpg';
-
-const Product = () => {
+const Product = (props) => {
 	return (
 		<div id="product-detail" className="pd-20">
 			<Row>
 				<Col sm={6}>
-					<ProductImage image={RedmiNote8Pro} />
+					<ProductImage image={props.selectedItem.image} />
 				</Col>
 				<Col sm={6}>
-					<ProductDescription />
+					<ProductDescription details={props.selectedItem} />
 				</Col>
 			</Row>
 		</div>

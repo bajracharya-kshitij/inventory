@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ProductDescription = () => {
+const ProductDescription = (props) => {
 	return (
 		<div className="description">
-			<div>Name: Redmi Note 8 Pro</div>
+			<div>Name: {props.details.name}</div>
 			<div>Category: Mobile Phones</div>
-			<div>Company: Xiaomi</div>
-			<div>Price: NRs. 29,999</div>
+			<div>Company: {props.details.company}</div>
+			<div>Price: {props.details.price}</div>
 		</div>
 	);
 };
