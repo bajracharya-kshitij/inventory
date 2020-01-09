@@ -39,10 +39,16 @@ class App extends Component {
 
   render() {
     return (
-      <Container className="pd-t-50">
-        <Product items={this.state.items} selectedItem={this.state.selectedItem}/>
-        <SimilarProducts items={this.state.items} selectedItem={this.state.selectedItem} updateSelectedItem={this.updateSelectedItem}/>
-      </Container>
+      <div>
+        <ul className="navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/add">Add</a></li>
+        </ul>
+        <Container className="pd-t-50">
+          <Product items={this.state.items} selectedItem={this.state.selectedItem}/>
+          <SimilarProducts items={this.state.items} selectedItem={this.state.selectedItem} updateSelectedItem={this.updateSelectedItem}/>
+        </Container>
+      </div>
   );
   }
 }
