@@ -14,7 +14,7 @@ const App = () => {
       </ul>
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/create" component={CreateProduct}/>
+        <Route path="/create" component={CreateProduct} />
       </div>
     </HashRouter>
   );
