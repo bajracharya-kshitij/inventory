@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class CreateProduct extends Component {
 
@@ -9,7 +10,8 @@ class CreateProduct extends Component {
 				name : '',
 				company : '',
 				price : ''
-			}
+			},
+			showAlert : false
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -26,6 +28,9 @@ class CreateProduct extends Component {
 	}
 
 	handleSubmit(event) {
+		this.setState({
+			showAlert : true
+		})
 		event.preventDefault();
 		const {item} = this.state;
 
@@ -37,19 +42,41 @@ class CreateProduct extends Component {
 			},
 			body: JSON.stringify(item)
 		});
+		event.target.reset();
+
+		setTimeout(() => {
+			this.setState({
+				showAlert : false
+			});
+		}, 1000);
 	}
 
 	render() {
+		const alertBox = this.state.showAlert ? <div className={`alert alert-success`}>Product Added</div> : null;
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<label for="name">Name</label>
-				<input type="text" name="name" onChange={this.handleChange} />
-				<label for="company">Company</label>
-				<input type="text" name="company" onChange={this.handleChange} />
-				<label for="price">Price</label>
-				<input type="text" name="price" onChange={this.handleChange} />
-				<button type="submit">Create</button>
-			</form>
+			<Container className="pd-t-20">
+				<h3>Create Product</h3>
+				<Row className="pd-t-20">
+					<Col xs={12} sm={6} md={4}>
+						{alertBox}
+						<form onSubmit={this.handleSubmit}>
+							<div className="form-group">
+								<label htmlFor="name">Name</label>
+								<input type="text" name="name" className="form-control" onChange={this.handleChange} />
+							</div>
+							<div className="form-group">
+								<label htmlFor="company">Company</label>
+								<input type="text" name="company" className="form-control" onChange={this.handleChange} />
+							</div>
+							<div className="form-group">
+								<label htmlFor="price">Price</label>
+								<input type="text" name="price" className="form-control" onChange={this.handleChange} />
+							</div>
+							<button type="submit" className="btn btn-success pull-right">Create</button>
+						</form>
+					</Col>
+				</Row>
+			</Container>
 		);
 	};
 };

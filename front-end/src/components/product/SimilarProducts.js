@@ -6,7 +6,7 @@ const SimilarProducts = (props) => {
 
 	const cards = [];
 	for (const [index, value] of props.items.entries()) {
-		if (value != props.selectedItem) {
+		if (value !== props.selectedItem) {
 			cards.push(
 				<Col sm={3} key={index}>
 					<ProductCard item={value} updateSelectedItem={props.updateSelectedItem}/>
