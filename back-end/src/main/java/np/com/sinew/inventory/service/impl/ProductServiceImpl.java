@@ -1,5 +1,7 @@
 package np.com.sinew.inventory.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public Product create(Product product) {
 		return productRepository.save(product);
+	}
+
+	@Override
+	public List<Product> findAll() {
+		return productRepository.findAll();
 	}
 
 }
