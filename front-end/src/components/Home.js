@@ -10,6 +10,8 @@ import PocophoneF1 from './product/images/pocophone-f1.jpg';
 import Honor7x from './product/images/honor-7x.jpg'
 import NoPhotoAvailable from './product/images/no-photo-available.jpeg';
 
+import axios from 'axios';
+
 class Home extends Component {
 
   constructor(props) {
@@ -35,27 +37,27 @@ class Home extends Component {
   componentDidMount() {
     var items = this.state.items;
     this.setState({loading : true});
-    fetch('/api/product/list', {
-       method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type' : 'application/json'
-        }
-    }).then(function(response) { return response.json(); })
-      .then(function(data) {
-          data.forEach(function(item) {
+    
+    axios.get('/api/product/list')
+          .then((response) => {
+            response.data.forEach(function(item) {
+              let hash = null;
+              if (item.images.length > 0) {
+                hash = item.images[0].hash;
+              } 
               items.push({
                 name : item.name,
                 image : NoPhotoAvailable,
+                imageHash : hash,
                 company : item.company,
                 price : item.price.toLocaleString('en-US', {
-                      style: 'currency',
-                      currency: 'NRS'
-                    })
+                          style: 'currency',
+                          currency: 'NRS'
+                        })
               });
-          });
-      })
-      .then(() => this.setState({items: items, loading : false}));
+            });
+          })
+          .then(() => this.setState({items: items, loading : false}));
   }
 
   updateSelectedItem(item) {
@@ -74,7 +76,7 @@ class Home extends Component {
           </div>
         }
       </Container>
-  );
+    );
   }
 }
 

@@ -9,7 +9,7 @@ const Product = (props) => {
 		<div id="product-detail" className="pd-20">
 			<Row>
 				<Col sm={6}>
-					<ProductImage image={props.selectedItem.image} name={props.selectedItem.name} />
+					<ProductImage image={props.selectedItem.image} imageHash={props.selectedItem.imageHash} name={props.selectedItem.name} />
 				</Col>
 				<Col sm={6}>
 					<ProductDescription details={props.selectedItem} />
